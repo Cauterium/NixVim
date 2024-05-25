@@ -1,11 +1,11 @@
 {
   # Import all your configuration modules here
-  imports = [ ./bufferline.nix ];
+  imports = [./bufferline.nix];
 
   colorschemes.tokyonight = {
-      enable = true;
-      settings.style = "night";
-      settings.transparent = true;
+    enable = true;
+    settings.style = "night";
+    settings.transparent = true;
   };
 
   plugins = {
@@ -117,6 +117,8 @@
         csharp-ls.enable = true;
         # Java
         java-language-server.enable = true;
+        # Nix
+        nil_ls.enable = true;
         # Python
         pylsp.enable = true;
         # Rust
