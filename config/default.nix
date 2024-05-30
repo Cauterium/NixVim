@@ -8,6 +8,12 @@
     settings.transparent = true;
   };
 
+  opts = {
+    number = true;
+    expandtab = true;
+    shiftwidth = 2;
+  };
+
   plugins = {
     alpha = {
       enable = true;
