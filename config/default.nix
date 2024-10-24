@@ -123,6 +123,7 @@
         csharp-ls.enable = true;
         # Haskell
         hls.enable = true;
+        hls.installGhc = true;
         # Java
         java-language-server.enable = true;
         # Nix
