@@ -121,10 +121,12 @@
         clangd.enable = true;
         # C#
         csharp-ls.enable = true;
+        # Haskell
+        hls.enable = true;
         # Java
         java-language-server.enable = true;
         # Nix
-        nil_ls.enable = true;
+        nixd.enable = true;
         # Python
         pylsp.enable = true;
         # Rust
