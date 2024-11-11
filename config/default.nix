@@ -120,20 +120,20 @@
         # C/C++
         clangd.enable = true;
         # C#
-        csharp-ls.enable = true;
+        csharp_ls.enable = true;
         # Haskell
         hls.enable = true;
         hls.installGhc = true;
         # Java
-        java-language-server.enable = true;
+        java_language_server.enable = true;
         # Nix
         nixd.enable = true;
         # Python
         pylsp.enable = true;
         # Rust
-        rust-analyzer.enable = true;
-        rust-analyzer.installCargo = true;
-        rust-analyzer.installRustc = true;
+        rust_analyzer.enable = true;
+        rust_analyzer.installCargo = true;
+        rust_analyzer.installRustc = true;
       };
     };
     cmp = {
@@ -165,6 +165,7 @@
     notify.enable = true;
     telescope.enable = true;
     treesitter.enable = true;
+    web-devicons.enable = true;
     which-key.enable = true;
   };
 
