@@ -19,12 +19,14 @@
   };
 
   plugins = {
-    copilot-vim.enable = true;
+    copilot-lua.enable = true;
+    copilot-cmp.enable = true;
     cmp = {
       enable = true;
       autoEnableSources = true;
       settings = {
         sources = [
+          {name = "copilot";}
           {name = "nvim_lsp";}
           {name = "path";}
           {name = "buffer";}
