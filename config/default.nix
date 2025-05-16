@@ -19,6 +19,7 @@
   };
 
   plugins = {
+    copilot-vim.enable = true;
     cmp = {
       enable = true;
       autoEnableSources = true;
