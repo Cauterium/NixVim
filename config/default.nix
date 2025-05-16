@@ -1,6 +1,10 @@
 {
   # Import all your configuration modules here
-  imports = [./bufferline.nix];
+  imports = [
+    ./alpha.nix
+    ./bufferline.nix
+    ./lsp.nix
+  ];
 
   colorschemes.tokyonight = {
     enable = true;
@@ -15,127 +19,6 @@
   };
 
   plugins = {
-    alpha = {
-      enable = true;
-      layout = [
-        {
-          type = "padding";
-          val = 4;
-        }
-        {
-          opts = {
-            hl = "Constant";
-            position = "center";
-          };
-          type = "text";
-          val = [
-            " ██████╗ █████╗ ██╗   ██╗██╗    ██╗   ██╗██╗███╗   ███╗"
-            "██╔════╝██╔══██╗██║   ██║██║    ██║   ██║██║████╗ ████║"
-            "██║     ███████║██║   ██║██║    ██║   ██║██║██╔████╔██║"
-            "██║     ██╔══██║██║   ██║██║    ╚██╗ ██╔╝██║██║╚██╔╝██║"
-            "╚██████╗██║  ██║╚██████╔╝██║     ╚████╔╝ ██║██║ ╚═╝ ██║"
-            " ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝      ╚═══╝  ╚═╝╚═╝     ╚═╝"
-          ];
-        }
-        {
-          type = "padding";
-          val = 4;
-        }
-        {
-          type = "group";
-          val = let
-            mkButton = shortcut: cmd: val: hl: {
-              type = "button";
-              inherit val;
-              opts = {
-                inherit hl shortcut;
-                keymap = [
-                  "n"
-                  shortcut
-                  cmd
-                  {}
-                ];
-                position = "center";
-                cursor = 0;
-                width = 40;
-                align_shortcut = "right";
-                hl_shortcut = "Keyword";
-              };
-            };
-          in [
-            (
-              mkButton
-              "n"
-              "<CMD>ene <BAR> startinsert <CR>"
-              " > New file"
-              "Operator"
-            )
-            (
-              mkButton
-              "f"
-              "<CMD>lua require('telescope.builtin').find_files({hidden = true})<CR>"
-              " > Find file"
-              "Operator"
-            )
-            (
-              mkButton
-              "r"
-              "<CMD>Telescope oldfiles<CR>"
-              "⟳ > Recent files"
-              "Operator"
-            )
-            (
-              mkButton
-              "q"
-              "<CMD>qa<CR>"
-              " > Quit Neovim"
-              "String"
-            )
-          ];
-        }
-        {
-          type = "padding";
-          val = 4;
-        }
-        {
-          opts = {
-            hl = "AlphaHeader";
-            position = "center";
-          };
-          type = "text";
-          val = "\"Lieber im Stuhl einschlafen, als im Schlaf einstuhlen\" - Schristof, 2024";
-        }
-      ];
-    };
-
-    copilot-cmp.enable = true;
-    copilot-lua = {
-      enable = true;
-      settings.suggestion = {enabled = false;};
-      settings.panel = {enabled = false;};
-    };
-    lsp = {
-      enable = true;
-      servers = {
-        # C/C++
-        clangd.enable = true;
-        # C#
-        csharp_ls.enable = true;
-        # Haskell
-        hls.enable = true;
-        hls.installGhc = true;
-        # Java
-        java_language_server.enable = true;
-        # Nix
-        nixd.enable = true;
-        # Python
-        pylsp.enable = true;
-        # Rust
-        rust_analyzer.enable = true;
-        rust_analyzer.installCargo = true;
-        rust_analyzer.installRustc = true;
-      };
-    };
     cmp = {
       enable = true;
       autoEnableSources = true;
