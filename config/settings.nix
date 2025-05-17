@@ -2,6 +2,7 @@
   config = {
     clipboard = {
       providers.wl-copy.enable = true;
+      register = "unnamedplus";
     };
 
     opts = {
@@ -12,6 +13,7 @@
       softtabstop = 2;
       shiftwidth = 2;
       expandtab = true;
+      signcolumn = "yes";
       smartindent = true;
       breakindent = true;
       wrap = true;
@@ -26,6 +28,12 @@
       termguicolors = true;
       splitright = true;
       splitbelow = true;
+    };
+
+    highlight = {
+      Comment.fg = "ff00ff";
+      Comment.bg = "000000";
+      Comment.underline = true;
     };
   };
 }
