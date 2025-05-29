@@ -28,6 +28,8 @@
       termguicolors = true;
       splitright = true;
       splitbelow = true;
+
+      ignorecase = true;
     };
   };
 }
