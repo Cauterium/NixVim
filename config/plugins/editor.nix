@@ -8,6 +8,27 @@
     todo-comments.enable = true;
     treesitter.enable = true;
 
+    gitsigns = {
+      enable = true;
+      settings = {
+        signs = {
+          add.text = " ";
+          change.text = " ";
+          delete.text = " ";
+          untracked.text = "";
+          topdelete.text = "󱂥 ";
+          changedelete.text = "󱂧 ";
+        };
+
+        current_line_blame = true;
+        current_line_blame_opts = {
+          virt_text = true;
+          virt_text_pos = "eol";
+        };
+        signcolumn = true;
+      };
+    };
+
     trim = {
       enable = true;
       settings = {
