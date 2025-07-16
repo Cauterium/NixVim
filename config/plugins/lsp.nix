@@ -20,6 +20,8 @@
         rust_analyzer.enable = true;
         rust_analyzer.installCargo = true;
         rust_analyzer.installRustc = true;
+        rust_analyzer.installRustfmt = true;
+        rust_analyzer.settings.check.overrideCommand = ["cargo fmt && cargo check --workspace --message-format=json --all-targets"];
       };
     };
   };
