@@ -18,13 +18,10 @@
   plugins = {
     bufferline.enable = true;
     commentary.enable = true;
-    lazy.enable = true;
     lint.enable = true;
     noice.enable = true;
     notify.enable = true;
-    nvim-autopairs.enable = true;
     telescope.enable = true;
-    todo-comments.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
   };
