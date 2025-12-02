@@ -12,6 +12,16 @@
         hls.installGhc = true;
         # Java
         java_language_server.enable = true;
+        # LaTeX
+        ltex.enable = true;
+        ltex.settings = {
+          language = "en-US";
+          additionalrules = {
+            enablepickyrules = true;
+            mothertongue = "de";
+          };
+          completionenabled = true;
+        };
         # Nix
         nixd.enable = true;
         # Python
