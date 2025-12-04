@@ -7,6 +7,7 @@
     ./plugins/cmp.nix
     ./plugins/editor.nix
     ./plugins/lsp.nix
+    ./plugins/telescope.nix
   ];
 
   colorschemes.tokyonight = {
@@ -21,7 +22,6 @@
     lint.enable = true;
     noice.enable = true;
     notify.enable = true;
-    telescope.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
   };
