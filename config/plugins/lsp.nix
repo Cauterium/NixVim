@@ -16,6 +16,14 @@
         ltex.enable = true;
         ltex.settings = {
           language = "en-US";
+          dictionary = {
+            "en-US" = [
+              ":/home/cauterium/.local/share/nvim/ltex/en-US.txt"
+            ];
+            "de-DE" = [
+              ":/home/cauterium/.local/share/nvim/ltex/de-DE.txt"
+            ];
+          };
           additionalrules = {
             enablepickyrules = true;
             mothertongue = "de";
