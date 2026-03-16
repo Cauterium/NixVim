@@ -14,22 +14,6 @@
         java_language_server.enable = true;
         # LaTeX
         ltex.enable = true;
-        ltex.settings = {
-          language = "en-US";
-          dictionary = {
-            "en-US" = [
-              ":/home/cauterium/.local/share/nvim/ltex/en-US.txt"
-            ];
-            "de-DE" = [
-              ":/home/cauterium/.local/share/nvim/ltex/de-DE.txt"
-            ];
-          };
-          additionalrules = {
-            enablepickyrules = true;
-            mothertongue = "de";
-          };
-          completionenabled = true;
-        };
         # Nix
         nixd.enable = true;
         # Python
@@ -42,4 +26,51 @@
       };
     };
   };
+
+  extraConfigLua = ''
+    local languages = {
+      dictionaries = {
+        ["en-US"] = { vim.fn.stdpath("data") .. "/spell/en.txt" },
+        ["de-DE"] = { vim.fn.stdpath("data") .. "/spell/de.txt" },
+      }
+    }
+
+    function languages.readDictFiles(lang)
+      local files = languages.dictionaries[lang]
+      local dict = {}
+      if files then
+        for _, file in ipairs(files) do
+          local f = io.open(file, "r")
+          if f then
+            for l in f:lines() do
+              -- Trim whitespace/newlines
+              local word = l:gsub("%s+", "")
+              if word ~= "" then table.insert(dict, word) end
+            end
+            f:close()
+          end
+        end
+      end
+      return dict
+    end
+
+    -- Use the new 0.11 native config API
+    -- This replaces the old require('lspconfig').ltex.setup({...})
+    vim.lsp.config["ltex"] = {
+      settings = {
+        ltex = {
+          language = "en-US",
+          dictionary = {
+            ["en-US"] = languages.readDictFiles("en-US"),
+            ["de-DE"] = languages.readDictFiles("de-DE"),
+          },
+          additionalRules = {
+            enablePickyRules = true,
+            motherTongue = "de",
+          },
+          completionEnabled = true,
+        },
+      },
+    }
+  '';
 }
