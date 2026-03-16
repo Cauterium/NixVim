@@ -66,7 +66,6 @@
           },
           additionalRules = {
             enablePickyRules = true,
-            motherTongue = "de",
           },
           completionEnabled = true,
         },
