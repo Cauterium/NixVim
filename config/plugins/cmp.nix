@@ -8,6 +8,7 @@
       };
     };
     copilot-cmp.enable = true;
+    cmp-nvim-lsp.enable = true;
     cmp = {
       enable = true;
       autoEnableSources = true;
