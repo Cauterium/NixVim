@@ -30,8 +30,8 @@
   extraConfigLua = ''
     local languages = {
       dictionaries = {
-        ["en-US"] = { vim.fn.stdpath("data") .. "/spell/en.txt" },
-        ["de-DE"] = { vim.fn.stdpath("data") .. "/spell/de.txt" },
+        ["en-US"] = { vim.fn.stdpath("data") .. "/spell/en.utf-8.add" },
+        ["de-DE"] = { vim.fn.stdpath("data") .. "/spell/de.utf-8.add" },
       }
     }
 

@@ -29,5 +29,7 @@
     splitbelow = true;
 
     ignorecase = true;
+
+    spellfile = "/home/cauterium/.local/share/nvim/spell/en.utf-8.add";
   };
 }
