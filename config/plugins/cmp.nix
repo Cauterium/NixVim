@@ -18,12 +18,6 @@
           {name = "path";}
           {name = "buffer";}
         ];
-        mapping = {
-          "<Tab>" = "cmp.mapping.select_next_item()";
-          "<S-Tab>" = "cmp.mapping.select_prev_item()";
-          "<C-e>" = "cmp.mapping.abort()";
-          "<C-CR>" = "cmp.mapping.confirm({ select = true })";
-        };
       };
     };
   };

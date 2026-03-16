@@ -3,6 +3,7 @@
     illuminate.enable = true;
     indent-blankline.enable = true;
     lualine.enable = true;
+    ltex-extra.enable = true;
     neo-tree.enable = true;
     nvim-autopairs.enable = true;
     todo-comments.enable = true;
