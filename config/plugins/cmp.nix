@@ -7,18 +7,38 @@
         suggestion = {enabled = false;};
       };
     };
-    copilot-cmp.enable = true;
-    cmp-nvim-lsp.enable = true;
-    cmp = {
+
+    blink-copilot.enable = true;
+    blink-cmp-latex.enable = true;
+    blink-cmp = {
       enable = true;
-      autoEnableSources = true;
+      setupLspCapabilities = true;
+
       settings = {
-        sources = [
-          {name = "copilot";}
-          {name = "nvim_lsp";}
-          {name = "path";}
-          {name = "buffer";}
-        ];
+        signature.enabled = true;
+        sources = {
+          default = [
+            "buffer"
+            "lsp"
+            "path"
+            "copilot"
+            "latex-symbols"
+          ];
+          providers = {
+            copilot = {
+              name = "copilot";
+              module = "blink-copilot";
+              async = true;
+              score_offset = 100;
+            };
+            lsp.score_offset = 4;
+            latex-symbols = {
+              name = "LaTeX";
+              module = "blink-cmp-latex";
+              async = true;
+            };
+          };
+        };
       };
     };
   };

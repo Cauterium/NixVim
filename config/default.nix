@@ -15,15 +15,6 @@
     enable = true;
     settings.style = "night";
     settings.transparent = true;
-  };
-
-  plugins = {
-    bufferline.enable = true;
-    commentary.enable = true;
-    lint.enable = true;
-    noice.enable = true;
-    notify.enable = true;
-    web-devicons.enable = true;
-    which-key.enable = true;
+    settings.styles.floats = "normal";
   };
 }

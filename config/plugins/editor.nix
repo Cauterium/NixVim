@@ -1,13 +1,19 @@
 {
   plugins = {
+    bufferline.enable = true;
+    commentary.enable = true;
     illuminate.enable = true;
     indent-blankline.enable = true;
+    lint.enable = true;
     lualine.enable = true;
-    ltex-extra.enable = true;
     neo-tree.enable = true;
+    noice.enable = true;
+    notify.enable = true;
     nvim-autopairs.enable = true;
     todo-comments.enable = true;
     treesitter.enable = true;
+    web-devicons.enable = true;
+    which-key.enable = true;
 
     gitsigns = {
       enable = true;
