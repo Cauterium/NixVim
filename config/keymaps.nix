@@ -10,6 +10,8 @@
     blink-cmp.settings.keymap = {
       "<Tab>" = [ "select_next" "fallback" ];
       "<S-Tab>" = [ "select_prev" "fallback" ];
+      "<C-j>" = [ "snippet_forward" "fallback" ];
+      "<C-k>" = [ "snippet_backward" "fallback" ];
       "<C-e>" = [ "cancel" ];
       "<C-CR>" = [ "select_and_accept" ];
     };

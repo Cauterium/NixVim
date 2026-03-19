@@ -1,6 +1,7 @@
 {
   plugins = {
     bufferline.enable = true;
+    colorizer.enable = true;
     commentary.enable = true;
     illuminate.enable = true;
     indent-blankline.enable = true;
