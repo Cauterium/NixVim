@@ -1,4 +1,4 @@
-{
+{config, ...}: {
   plugins = {
     bufferline.enable = true;
     colorizer.enable = true;
@@ -12,9 +12,45 @@
     notify.enable = true;
     nvim-autopairs.enable = true;
     todo-comments.enable = true;
-    treesitter.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
+
+    treesitter = {
+      enable = true;
+      grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
+        bash
+        bibtex
+        c
+        c_sharp
+        cmake
+        comment
+        cpp
+        diff
+        git_config
+        git_rebase
+        gitattributes
+        gitcommit
+        gitignore
+        haskell
+        haskell_persistent
+        html
+        hyprlang
+        java
+        javadoc
+        javascript
+        json
+        json5
+        latex
+        make
+        markdown
+        nix
+        python
+        rust
+        vim
+        vimdoc
+        yaml
+      ];
+    };
 
     gitsigns = {
       enable = true;

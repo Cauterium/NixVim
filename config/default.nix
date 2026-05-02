@@ -11,10 +11,9 @@
     ./plugins/telescope.nix
   ];
 
-  colorschemes.tokyonight = {
+  colorschemes.catppuccin = {
     enable = true;
-    settings.style = "night";
-    settings.transparent = true;
-    settings.styles.floats = "normal";
+    settings.flavour = "mocha";
+    settings.transparent_background = true;
   };
 }
