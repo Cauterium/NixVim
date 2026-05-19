@@ -1,4 +1,21 @@
-{config, ...}: {
+{config, pkgs, ...}:
+let
+  treesitter-ipynb = pkgs.tree-sitter.buildGrammar {
+    language = "ipynb";
+    version = "0.0.0";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "ajbucci";
+      repo = "ipynb.nvim";
+      rev = "9ec5b566dc37417b17d7e9de04d673506176e9fd";
+      hash = "sha256-iwvN829U/V5/YLqIY+KgVIYVK3Tg9HtP+v82VhPWmmM=";
+    };
+
+    sourceRoot = "source/tree-sitter-ipynb";
+
+    meta.homepage = "https://github.com/ajbucci/ipynb.nvim";
+  };
+in {
   plugins = {
     bufferline.enable = true;
     colorizer.enable = true;
@@ -11,6 +28,7 @@
     noice.enable = true;
     notify.enable = true;
     nvim-autopairs.enable = true;
+    snacks.enable = true;
     todo-comments.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
@@ -46,6 +64,7 @@
         nix
         python
         rust
+        treesitter-ipynb
         vim
         vimdoc
         yaml
@@ -86,4 +105,17 @@
       };
     };
   };
+
+  extraPlugins = [
+    pkgs.vimPlugins.ipynb-nvim
+  ];
+
+  extraPackages = with pkgs.python3Packages; [
+    jupyter
+    jupyter-client
+  ];
+
+  extraConfigLua = ''
+    require("ipynb").setup()
+  '';
 }
