@@ -1,4 +1,7 @@
 {
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
+
   clipboard = {
     providers.wl-copy.enable = true;
     register = "unnamedplus";
