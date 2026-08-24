@@ -4,7 +4,10 @@
     register = "unnamedplus";
   };
 
-  globals.mapleader = " ";
+  globals = {
+    autoformat = true;
+    mapleader = " ";
+  };
 
   opts = {
     number = true;
@@ -34,4 +37,5 @@
 
     spellfile = "/home/cauterium/.local/share/nvim/spell/en.utf-8.add";
   };
+
 }

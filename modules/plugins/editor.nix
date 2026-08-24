@@ -25,11 +25,11 @@ in {
     lint.enable = true;
     lualine.enable = true;
     neo-tree.enable = true;
-    noice.enable = true;
     notify.enable = true;
     nvim-autopairs.enable = true;
     snacks.enable = true;
     todo-comments.enable = true;
+    trouble.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
 
@@ -69,6 +69,10 @@ in {
         vimdoc
         yaml
       ];
+      settings = {
+        highlight.enable = true;
+        indent.enable = true;
+      };
     };
 
     gitsigns = {

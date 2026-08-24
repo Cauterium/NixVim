@@ -1,4 +1,15 @@
 {
+  diagnostic.settings = {
+    signs.text = {
+      "__rawKey__vim.diagnostic.severity.ERROR" = " ";
+      "__rawKey__vim.diagnostic.severity.WARN" = " ";
+      "__rawKey__vim.diagnostic.severity.HINT" = "󰌵";
+      "__rawKey__vim.diagnostic.severity.INFO" = " ";
+    };
+    virtual_lines = true;
+    virtual_text = true;
+  };
+
   plugins = {
     ltex-extra.enable = true;
     lsp = {
