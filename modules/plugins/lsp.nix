@@ -23,7 +23,7 @@
         hls.enable = true;
         hls.installGhc = true;
         # Java
-        java_language_server.enable = true;
+        jdtls.enable = true;
         # LaTeX
         ltex.enable = true;
         # Nix
